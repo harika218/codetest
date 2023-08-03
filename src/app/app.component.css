@@ -1,0 +1,17 @@
+html, body{
+    height:100%;
+    margin:0;
+}
+
+.header{
+    max-height:250px;
+    background-color: blanchedalmond;
+}
+
+/* .size-adjust{
+    width:auto !important;
+}
+
+.adjust-width{
+    width:25% !important;
+} */

@@ -1,27 +1,4 @@
-<div class="header text-center">
-   <h1>{{title}}</h1>
-</div>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-12 col-sm-offset-1 col-md-offset-2">
-
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <ul class="nav navbar-nav">
-            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="">Revenue Chart</a></li>
-            <li routerLinkActive="active"><a routerLink="/maps">Maps</a></li>
-          </ul>
-        </div>
-      </nav>
-  </div>
-  </div>
-
-  <div class="row mt-5">
-    <router-outlet></router-outlet>
-  </div>
- 
-	<!-- <div class="row">
+<div class="row">
     <form #revenueForm="ngForm" (ngSubmit)="generateChart(revenueForm)">
       <div class="container">
           <div class="col-md-12">
@@ -33,17 +10,17 @@
                 <div class="row ">
                 <div class="form-group mt-3">
                   <label for="januaryRevenue">January</label>
-                  <input type="number" class="form-control size-adjust" id="januaryRevenue" name="januaryRevenue" ngModel required>
+                  <input type="number" class="form-control size-adjust" id="januaryRevenue" name="januaryRevenue" [(ngModel)]="formData.januaryRevenue" required>
                 </div>
 
                 <div class="form-group mt-3">
                   <label for="februaryRevenue">February Revenue:</label>
-                  <input type="number" class="form-control size-adjust" id="februaryRevenue" name="februaryRevenue" ngModel required>
+                  <input type="number" class="form-control size-adjust" id="februaryRevenue" name="februaryRevenue" [(ngModel)]="formData.februaryRevenue" required>
                 </div>
 
                 <div class="form-group mt-3">
                   <label for="marchRevenue">March Revenue:</label>
-                  <input type="number" class="form-control size-adjust" id="marchRevenue" name="marchRevenue" ngModel required>
+                  <input type="number" class="form-control size-adjust" id="marchRevenue" name="marchRevenue" [(ngModel)]="formData.marchRevenue" required>
                 </div>
                 </div>
               </div>
@@ -55,14 +32,14 @@
                   <div class="col-md-12">
                     <div class="form-group mt-3">
                       <label for="janColor">Color</label>
-                      <select name="januaryColor" id="janColor" class="form-control adjust-width" ngModel required>
+                      <select name="januaryColor" id="janColor" class="form-control adjust-width" [(ngModel)]="formData.januaryColor" required>
                         <option *ngFor="let color of colors" [value]="color.hexName">{{color.name}} </option>
 
                       </select>
                     </div>
                     <div class="form-group mt-3">
                       <label for="febColor">Color</label>
-                      <select name="februaryColor" id="febColor" class="form-control adjust-width" ngModel required>
+                      <select name="februaryColor" id="febColor" class="form-control adjust-width" [(ngModel)]="formData.februaryColor" required>
                         <option *ngFor="let color of colors" [value]="color.hexName">{{color.name}} </option>
                         
                       </select>
@@ -70,7 +47,7 @@
 
                     <div class="form-group mt-3">
                       <label for="marColor">Color</label>
-                      <select name="marchColor" id="marColor"  class="form-control adjust-width" ngModel required>
+                      <select name="marchColor" id="marColor"  class="form-control adjust-width" [(ngModel)]="formData.marchColor" required>
                         <option *ngFor="let color of colors" [value]="color.hexName">{{color.name}} </option>
                       </select>
                     </div>
@@ -82,7 +59,7 @@
                   <div class="form-group">
                     <label>Chart Type</label>
                     <div class="form-check" *ngFor="let chart of chartTypes">
-                      <input type="radio" class="form-check-input" name="chartType" [value]="chart" ngModel required>
+                      <input type="radio" class="form-check-input" name="chartType" [value]="chart" [(ngModel)]="formData.chartType" required>
                       <label class="form-check-label">{{chart}}</label>
                     </div>
                   </div>
@@ -96,14 +73,12 @@
             </div>
           </div>
 	    </div>
-  </form> -->
+  </form>
 
 
 
   <!-- Chart Container -->
-  <!--<div class="row mt-5">
+  <div class="row mt-5">
     <div id="chartContainer" style="height:400px; width:auto;"></div>
   </div>
-</div> -->
-
-<footer class="footer"></footer>
+</div>
